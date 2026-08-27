@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <title>Support — Indent Four</title>
+    <meta name="description" content="Help with Indent Four scripts, files, permissions, included libraries, and Apple Shortcuts.">
+    <link rel="canonical" href="https://indentfour.app/support/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Indent Four">
+    <meta property="og:title" content="Support — Indent Four">
+    <meta property="og:description" content="Help with Indent Four scripts, files, permissions, included libraries, and Apple Shortcuts.">
+    <meta property="og:url" content="https://indentfour.app/support/">
+    <meta property="og:image" content="https://indentfour.app/assets/images/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Indent Four app icon beside a real iPad workspace screenshot">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support — Indent Four">
+    <meta name="twitter:description" content="Help with scripts, files, permissions, libraries, and Apple Shortcuts.">
+    <meta name="twitter:image" content="https://indentfour.app/assets/images/social-card.png">
+    <meta name="twitter:image:alt" content="Indent Four app icon beside a real iPad workspace screenshot">
+    <meta name="theme-color" content="#F5F3ED">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/site.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Indent Four home">
+          <img src="/assets/icons/brand-48.png" width="48" height="48" alt="">
+          <span>Indent Four</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-nav-toggle>
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-nav data-open="false">
+          <ul class="nav-list">
+            <li><a href="/#product">Product</a></li>
+            <li><a href="/#shortcuts">Shortcuts</a></li>
+            <li><a href="/#outputs">Outputs</a></li>
+            <li><a href="/#libraries">Libraries</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/support/" aria-current="page">Support</a></li>
+            <li><span class="button release-status nav-cta">Coming to the App Store</span></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <header class="page-hero">
+        <div class="container page-hero-content">
+          <p class="eyebrow">Help + troubleshooting</p>
+          <h1>Indent Four Support</h1>
+          <p class="lead">Need help with a script, file, permission, or Shortcut? Start with the quick checks below. If the problem continues, send the details listed under Contact.</p>
+        </div>
+      </header>
+
+      <div class="section section-white">
+        <div class="container prose-layout">
+          <aside class="prose-index" aria-label="Page section">
+            <p>Support guide</p>
+          </aside>
+          <div class="prose">
+            <section aria-labelledby="quick-checks-heading">
+              <h2 id="quick-checks-heading">Quick checks</h2>
+              <div class="support-item">
+                <h3>A script will not run</h3>
+                <p>Check the console for the Python exception and line number. Confirm that the file is saved and that any required input files still exist beside the script.</p>
+              </div>
+              <div class="support-item">
+                <h3>An output file is missing</h3>
+                <p>Save outputs beside the running script using <code>Path(__file__).with_name(...)</code>. New or changed files then appear in the console’s Output section and in Files.</p>
+              </div>
+              <div class="support-item">
+                <h3>A protected feature is unavailable</h3>
+                <p>Location, calendars, reminders, contacts, and notifications require system permission when a script first uses them. Review access under Settings → Privacy &amp; Security or the Indent Four entry in Settings.</p>
+              </div>
+              <div class="support-item">
+                <h3>A script does not appear in Shortcuts</h3>
+                <p>Open Indent Four once after installation, confirm that the script is saved under the Scripts folder, then reopen the action’s script picker in Shortcuts.</p>
+              </div>
+              <div class="support-item">
+                <h3>An included example was deleted</h3>
+                <p>Open Indent Four → Settings → Restore Included Examples. Existing files are not overwritten.</p>
+              </div>
+              <div class="support-item">
+                <h3>A library cannot be imported</h3>
+                <p>Open Libraries inside Indent Four to see the packages included with the installed version. Version 1.0 does not install packages from external repositories.</p>
+              </div>
+            </section>
+
+            <section aria-labelledby="files-heading">
+              <h2 id="files-heading">Where files live</h2>
+              <p>Scripts and their adjacent files are available in Files under On My iPhone or On My iPad → Indent Four → Scripts.</p>
+            </section>
+
+            <section aria-labelledby="contact-heading">
+              <h2 id="contact-heading">Contact</h2>
+              <p>If the issue continues, email support with your device model, iOS or iPadOS version, Indent Four version, the name of the example or feature involved, and the exact console error. Remove private data, credentials, and personal files before sending.</p>
+              <p class="contact-status">A support address will be published here before Indent Four is released.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <p class="footer-product">Indent Four — Python on your device. Useful everywhere else.</p>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="/#product">Product</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+
+          </nav>
+        </div>
+        <div class="footer-meta">
+
+          <p>Made for iPhone and iPad.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>

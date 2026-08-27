@@ -1,0 +1,5 @@
+_site/
+artifacts/
+.DS_Store
+node_modules/
+.lighthouseci/

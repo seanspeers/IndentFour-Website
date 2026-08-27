@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>document.documentElement.classList.add("js");</script>
+    <title>Indent Four — Python 3.14 IDE for iPhone and iPad</title>
+    <meta name="description" content="Write and run Python 3.14 locally, automate with Shortcuts, and create PDFs, spreadsheets, images, and reports on iPhone and iPad.">
+    <link rel="canonical" href="https://indentfour.app/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Indent Four">
+    <meta property="og:title" content="Indent Four — Python 3.14 IDE for iPhone and iPad">
+    <meta property="og:description" content="Write and run Python 3.14 locally, automate with Shortcuts, and create PDFs, spreadsheets, images, and reports on iPhone and iPad.">
+    <meta property="og:url" content="https://indentfour.app/">
+    <meta property="og:image" content="https://indentfour.app/assets/images/social-card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Indent Four app icon beside a real iPad workspace screenshot">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Indent Four — Python 3.14 for iPhone and iPad">
+    <meta name="twitter:description" content="Write and run Python locally, automate with Shortcuts, and create useful files.">
+    <meta name="twitter:image" content="https://indentfour.app/assets/images/social-card.png">
+    <meta name="twitter:image:alt" content="Indent Four app icon beside a real iPad workspace screenshot">
+
+    <meta name="theme-color" content="#F5F3ED" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0C172A" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-title" content="Indent Four">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/site.css">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Indent Four",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "iOS 18 or later; iPadOS 18 or later",
+        "url": "https://indentfour.app/"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Indent Four run real Python locally?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The app includes CPython 3.14.6. Scripts execute on the device rather than being sent to a developer-operated server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The editor, runtime, included libraries, examples, and local file workflows work offline. A script that calls a web API or another network service naturally requires a connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I install packages with pip?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not in version 1.0. Indent Four includes a curated set of libraries that ship inside the signed app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Shortcuts integration work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use “Run Indent Four Script” for a saved file or “Run Python Code” for inline code. Shortcuts can pass supported values and files into Python and receive values or files back."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where are my scripts and outputs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They are available under On My iPhone or On My iPad → Indent Four → Scripts in the Files app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on iPad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Indent Four has dedicated iPhone and iPad layouts and supports both portrait and landscape orientations where appropriate."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Indent Four collect my data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The app has no analytics, advertising, tracking, accounts, or developer backend. Code you choose to run can communicate with services you specify."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Indent Four home">
+          <img src="/assets/icons/brand-48.png" width="48" height="48" alt="">
+          <span>Indent Four</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation" data-nav-toggle>
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-nav data-open="false">
+          <ul class="nav-list">
+            <li><a href="#product">Product</a></li>
+            <li><a href="#shortcuts">Shortcuts</a></li>
+            <li><a href="#outputs">Outputs</a></li>
+            <li><a href="#libraries">Libraries</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/support/">Support</a></li>
+            <li><span class="button release-status nav-cta">Coming to the App Store</span></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container grid-12 hero-grid">
+          <div class="hero-copy">
+            <div class="hero-product">
+              <img src="/assets/icons/icon-192.png" width="192" height="192" alt="Indent Four app icon">
+              <span>Indent Four</span>
+            </div>
+            <p class="eyebrow">Python 3.14 for iPhone + iPad</p>
+            <h1 id="hero-heading">Write Python. Make something useful.</h1>
+            <p class="hero-body">Indent Four is a focused, local Python workspace for scripts, Shortcuts, and real files—PDFs, spreadsheets, images, reports, and more.</p>
+            <div class="button-row">
+              <span class="button release-status nav-cta">Coming to the App Store</span>
+              <a class="button button-secondary" href="#product">See what it can do</a>
+            </div>
+            <p class="hero-note">No account. No cloud runtime. No setup.</p>
+          </div>
+          <picture class="hero-visual">
+            <source type="image/avif" srcset="/assets/images/hero-python-660.avif 660w, /assets/images/hero-python-990.avif 990w" sizes="(max-width: 620px) 80vw, (max-width: 1000px) 36vw, 30rem">
+            <source type="image/webp" srcset="/assets/images/hero-python-660.webp 660w, /assets/images/hero-python-990.webp 990w" sizes="(max-width: 620px) 80vw, (max-width: 1000px) 36vw, 30rem">
+            <img src="/assets/images/hero-python-990.png" width="990" height="2151" alt="Indent Four running a Python 3.14 script locally on iPhone" fetchpriority="high" decoding="async">
+          </picture>
+        </div>
+      </section>
+
+      <section class="section section-white intro" id="product" aria-labelledby="intro-heading">
+        <div class="container grid-12">
+          <div class="intro-copy">
+            <h2 class="section-heading" id="intro-heading">A focused place to write and run Python.</h2>
+            <p class="lead">Indent Four keeps the edit–run–use loop close. Write a script in a native editor, run it with CPython 3.14, inspect the result in the console, and keep whatever the script creates.</p>
+          </div>
+          <p class="intro-aside">It is deliberately narrower than a desktop IDE—and much more at home on an iPhone or iPad.</p>
+        </div>
+      </section>
+
+      <section class="section section-dark" aria-labelledby="local-heading">
+        <div class="container grid-12">
+          <div class="feature-copy">
+            <p class="kicker">01 — Local Python</p>
+            <h2 class="section-heading" id="local-heading">Real Python, right on the device.</h2>
+            <p class="lead">CPython 3.14.6 and the included libraries ship with the app. The editor, runtime, and file workflows work without a network connection. Network access happens only when a script explicitly requests it.</p>
+            <ul class="proof-list">
+              <li>Native editor with syntax highlighting and smart indentation</li>
+              <li>Integrated console with output, errors, timing, and artifacts</li>
+              <li>Python files remain visible through the Files app</li>
+            </ul>
+          </div>
+          <div class="feature-visual">
+            <picture>
+              <source type="image/avif" srcset="/assets/images/workspace-ipad-720.avif 720w, /assets/images/workspace-ipad-1376.avif 1376w" sizes="(max-width: 1000px) calc(100vw - 2.4rem), 50vw">
+              <source type="image/webp" srcset="/assets/images/workspace-ipad-720.webp 720w, /assets/images/workspace-ipad-1376.webp 1376w" sizes="(max-width: 1000px) calc(100vw - 2.4rem), 50vw">
+              <img class="screenshot-landscape" src="/assets/images/workspace-ipad-1376.png" width="1376" height="1032" alt="Indent Four’s native editor, scripts sidebar, and integrated console on iPad" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="shortcuts" aria-labelledby="shortcuts-heading">
+        <div class="container grid-12">
+          <div class="shortcuts-copy">
+            <p class="kicker">02 — Shortcuts</p>
+            <h2 class="section-heading" id="shortcuts-heading">Give Shortcuts the logic it was missing.</h2>
+            <p class="lead">Run a saved script or inline Python from Apple Shortcuts without opening Indent Four. Pass in text, numbers, Booleans, URLs, files, lists, or JSON—and return useful values or files to the next action.</p>
+            <p class="supporting">Python becomes part of the workflow, not a separate destination.</p>
+          </div>
+          <picture class="shortcuts-visual">
+            <source type="image/avif" srcset="/assets/images/shortcuts-660.avif 660w, /assets/images/shortcuts-990.avif 990w" sizes="(max-width: 1000px) 70vw, 28rem">
+            <source type="image/webp" srcset="/assets/images/shortcuts-660.webp 660w, /assets/images/shortcuts-990.webp 990w" sizes="(max-width: 1000px) 70vw, 28rem">
+            <img class="screenshot-portrait" src="/assets/images/shortcuts-990.png" width="990" height="2151" alt="A Python script in Indent Four prepared to receive data from Apple Shortcuts" loading="lazy" decoding="async">
+          </picture>
+        </div>
+      </section>
+
+      <section class="section" id="outputs" aria-labelledby="outputs-heading">
+        <div class="container grid-12">
+          <div class="outputs-copy">
+            <p class="kicker">03 — Real outputs</p>
+            <h2 class="section-heading" id="outputs-heading">Code that leaves the console.</h2>
+            <p class="lead">Create PDFs, XLSX workbooks, images, QR codes, Markdown, HTML, CSV, JSON, YAML, and complete multi-file reports. New and changed files appear after each run with Preview and Share actions.</p>
+          </div>
+          <ul class="output-list" aria-label="Output types">
+            <li><strong>PDF</strong><span>create, combine, inspect</span></li>
+            <li><strong>XLSX</strong><span>build and edit spreadsheets</span></li>
+            <li><strong>Images</strong><span>resize, transform, generate</span></li>
+            <li><strong>Reports</strong><span>produce several useful files in one run</span></li>
+            <li><strong>Data</strong><span>work with CSV, JSON, YAML, and HTML</span></li>
+          </ul>
+          <div class="outputs-gallery" role="group" aria-label="Real Indent Four output workflows">
+            <picture>
+              <source type="image/avif" srcset="/assets/images/outputs-ipad-720.avif 720w, /assets/images/outputs-ipad-1376.avif 1376w" sizes="(max-width: 620px) calc(100vw - 3.8rem), 55vw">
+              <source type="image/webp" srcset="/assets/images/outputs-ipad-720.webp 720w, /assets/images/outputs-ipad-1376.webp 1376w" sizes="(max-width: 620px) calc(100vw - 3.8rem), 55vw">
+              <img class="screenshot-landscape" src="/assets/images/outputs-ipad-1376.png" width="1376" height="1032" alt="An iPad script producing a multi-file project report with output artifacts" loading="lazy" decoding="async">
+            </picture>
+            <picture>
+              <source type="image/avif" srcset="/assets/images/spreadsheet-660.avif 660w">
+              <source type="image/webp" srcset="/assets/images/spreadsheet-660.webp 660w">
+              <img class="screenshot-portrait" src="/assets/images/spreadsheet-660.png" width="660" height="1434" alt="An Indent Four script creating a spreadsheet on iPhone" loading="lazy" decoding="async">
+            </picture>
+            <picture>
+              <source type="image/avif" srcset="/assets/images/pdf-660.avif 660w">
+              <source type="image/webp" srcset="/assets/images/pdf-660.webp 660w">
+              <img class="screenshot-portrait" src="/assets/images/pdf-660.png" width="660" height="1434" alt="An Indent Four script combining and inspecting PDF files on iPhone" loading="lazy" decoding="async">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white section-rule" aria-labelledby="workflow-heading">
+        <div class="container grid-12">
+          <div class="workflow-header">
+            <h2 class="section-heading" id="workflow-heading">Write it. Run it. Use the result.</h2>
+          </div>
+          <ol class="workflow-list">
+            <li>
+              <h3>Start with a script</h3>
+              <p>Create your own Python file or open an editable included example.</p>
+            </li>
+            <li>
+              <h3>Run locally</h3>
+              <p>See output, errors, completion time, and generated artifacts in the integrated console.</p>
+            </li>
+            <li>
+              <h3>Keep what you made</h3>
+              <p>Preview, share, or continue working with the resulting files through Files and Shortcuts.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="libraries" aria-labelledby="libraries-heading">
+        <div class="container grid-12">
+          <div class="libraries-header">
+            <p class="kicker">Included libraries</p>
+            <h2 class="section-heading" id="libraries-heading">Useful tools. Already there.</h2>
+            <p class="lead">Indent Four includes a curated set of libraries for practical scripts. They ship with the app, so version 1.0 does not need a package download step.</p>
+            <p class="supporting">Included versions are visible inside the app.</p>
+          </div>
+          <dl class="library-rows">
+            <div class="library-row">
+              <dt>Web</dt>
+              <dd>Requests, Beautiful Soup, WebSockets</dd>
+            </div>
+            <div class="library-row">
+              <dt>Documents + data</dt>
+              <dd>pypdf, XlsxWriter, openpyxl, PyYAML, Markdown</dd>
+            </div>
+            <div class="library-row">
+              <dt>Images</dt>
+              <dd>Pillow, qrcode</dd>
+            </div>
+            <div class="library-row">
+              <dt>Utilities</dt>
+              <dd>Jinja2, python-dateutil</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section section-white" aria-labelledby="device-heading">
+        <div class="container grid-12">
+          <picture class="device-visual">
+            <source type="image/avif" srcset="/assets/images/device-660.avif 660w">
+            <source type="image/webp" srcset="/assets/images/device-660.webp 660w">
+            <img class="screenshot-portrait" src="/assets/images/device-660.png" width="660" height="1434" alt="Python using clipboard access through Indent Four’s device integrations" loading="lazy" decoding="async">
+          </picture>
+          <div class="device-copy">
+            <h2 class="section-heading" id="device-heading">Use the device you already have.</h2>
+            <p class="lead">Python scripts can work with files, system photo picking, sharing, clipboard text, haptics, speech, local notifications, location, calendars, reminders, contacts, Keychain, and device information.</p>
+            <p class="supporting">Protected permissions are requested only when the running script explicitly uses the corresponding feature.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-rule" aria-labelledby="examples-heading">
+        <div class="container grid-12">
+          <picture class="examples-visual">
+            <source type="image/avif" srcset="/assets/images/examples-660.avif 660w">
+            <source type="image/webp" srcset="/assets/images/examples-660.webp 660w">
+            <img class="screenshot-portrait" src="/assets/images/examples-660.png" width="660" height="1434" alt="The editable included examples listed in Indent Four on iPhone" loading="lazy" decoding="async">
+          </picture>
+          <div class="examples-copy">
+            <h2 class="section-heading" id="examples-heading">Start from working code.</h2>
+            <p class="lead">Included examples are normal, editable Python files. Run them as they are, change them directly, duplicate them, or use them as the beginning of something else.</p>
+            <ul class="example-list">
+              <li>Create and edit a spreadsheet</li>
+              <li>Combine and inspect PDFs</li>
+              <li>Resize an image</li>
+              <li>Generate a QR code</li>
+              <li>Fetch an API</li>
+              <li>Use WebSockets</li>
+              <li>Clean up clipboard text</li>
+              <li>Transform values in Shortcuts</li>
+              <li>Build a multi-file project report</li>
+            </ul>
+            <p class="supporting">Examples can be restored from Settings without replacing files you have already changed.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark privacy-callout" aria-labelledby="privacy-heading">
+        <div class="container grid-12">
+          <div class="privacy-copy">
+            <p class="kicker">Local by default</p>
+            <h2 class="section-heading" id="privacy-heading">Your scripts are yours.</h2>
+            <p class="lead">Indent Four has no account, advertising, analytics, tracking, or developer cloud runtime. Scripts and local outputs stay in the app’s document container unless you explicitly share them or run code that connects to a network service.</p>
+            <a class="text-link" href="/privacy/">Read the privacy policy</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white" id="faq" aria-labelledby="faq-heading">
+        <div class="container grid-12">
+          <div class="faq-header">
+            <h2 class="section-heading" id="faq-heading">Questions, answered plainly.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Does Indent Four run real Python locally?</summary>
+              <p>Yes. The app includes CPython 3.14.6. Scripts execute on the device rather than being sent to a developer-operated server.</p>
+            </details>
+            <details>
+              <summary>Does it work offline?</summary>
+              <p>The editor, runtime, included libraries, examples, and local file workflows work offline. A script that calls a web API or another network service naturally requires a connection.</p>
+            </details>
+            <details>
+              <summary>Can I install packages with pip?</summary>
+              <p>Not in version 1.0. Indent Four includes a curated set of libraries that ship inside the signed app.</p>
+            </details>
+            <details>
+              <summary>How does Shortcuts integration work?</summary>
+              <p>Use “Run Indent Four Script” for a saved file or “Run Python Code” for inline code. Shortcuts can pass supported values and files into Python and receive values or files back.</p>
+            </details>
+            <details>
+              <summary>Where are my scripts and outputs?</summary>
+              <p>They are available under On My iPhone or On My iPad → Indent Four → Scripts in the Files app.</p>
+            </details>
+            <details>
+              <summary>Does it work on iPad?</summary>
+              <p>Yes. Indent Four has dedicated iPhone and iPad layouts and supports both portrait and landscape orientations where appropriate.</p>
+            </details>
+            <details>
+              <summary>Does Indent Four collect my data?</summary>
+              <p>No. The app has no analytics, advertising, tracking, accounts, or developer backend. Code you choose to run can communicate with services you specify.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" aria-labelledby="final-heading">
+        <div class="container grid-12">
+          <div class="final-cta-inner">
+            <h2 class="section-heading" id="final-heading">Keep a Python workspace in your pocket.</h2>
+            <p class="lead">Write useful scripts, connect them to Shortcuts, and create files that are ready for the rest of your workflow.</p>
+            <div class="button-row"><span class="button release-status nav-cta">Coming to the App Store</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <p class="footer-product">Indent Four — Python on your device. Useful everywhere else.</p>
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="/#product">Product</a>
+            <a href="/support/">Support</a>
+            <a href="/privacy/">Privacy</a>
+
+          </nav>
+        </div>
+        <div class="footer-meta">
+
+          <p>Made for iPhone and iPad.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/site.js" defer></script>
+  </body>
+</html>
