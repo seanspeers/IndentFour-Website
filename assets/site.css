@@ -333,6 +333,11 @@ a.button:hover {
   color: var(--ink);
 }
 
+.nav-list a.button-primary,
+.nav-list a.button-primary:hover {
+  color: var(--white);
+}
+
 .nav-list .nav-cta,
 .nav-list .release-status {
   min-height: 2.45rem;
